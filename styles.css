@@ -29,5 +29,16 @@ th:first-child { border-radius: 8px 0 0 8px; }
 th:last-child { border-radius: 0 8px 8px 0; }
 td { padding: 14px 16px; border-bottom: 1px solid #e8eef2; font-variant-numeric: tabular-nums; }
 tr:last-child td { border-bottom: 0; }
+.sap-button { display: inline; width: auto; padding: 0; border: 0; border-radius: 0; background: transparent; color: #075d8a; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.sap-button:hover { background: transparent; color: #064465; }
+dialog { width: min(900px, calc(100% - 24px)); max-height: min(82vh, 850px); overflow: auto; padding: 28px; border: 1px solid #dae5ec; border-radius: 18px; box-shadow: 0 22px 60px rgba(17, 49, 73, .25); color: #17324a; }
+dialog::backdrop { background: rgba(9, 32, 49, .55); }
+.dialog-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.close-button { width: 36px; height: 36px; padding: 0; border-radius: 50%; background: #eaf2f6; color: #17324a; font-size: 27px; line-height: 1; }
+.close-button:hover { background: #d7e8f0; }
+.package-table { margin-top: 18px; }
+.package-table th:first-child, .package-table td:first-child { width: 23%; }
+.package-table th:nth-child(2), .package-table td:nth-child(2) { width: 62%; text-align: left; }
+.package-table th:last-child, .package-table td:last-child { width: 15%; }
 footer { color: #6c8190; font-size: 13px; text-align: center; margin-top: 28px; }
-@media (max-width: 520px) { .page { padding: 27px 15px; } .header { margin-bottom: 24px; } .panel { padding: 20px; } .search-row { flex-direction: column; } button { width: 100%; } .results-heading { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 520px) { .page { padding: 27px 15px; } .header { margin-bottom: 24px; } .panel { padding: 20px; } .search-row { flex-direction: column; } button { width: 100%; } .results-heading { align-items: flex-start; flex-direction: column; } dialog { padding: 18px; } .package-table { min-width: 560px; } }

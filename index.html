@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0c4a6e">
-    <meta name="description" content="Consulta de Delivery, NF e Code SAP por OC na aba TIM 5G-Reuso.">
+    <meta name="description" content="Consulta de Delivery, NF e materiais por OC.">
     <title>Consulta de Material</title>
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
@@ -46,6 +46,23 @@
           </table>
         </div>
       </section>
+
+      <dialog id="package-dialog" aria-labelledby="package-title">
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow">Materiais do pacote</p>
+            <h2 id="package-title">Code SAP <span id="package-code"></span></h2>
+          </div>
+          <button id="close-dialog" class="close-button" type="button" aria-label="Fechar pop-up">×</button>
+        </div>
+        <p id="package-message" class="message" role="status" aria-live="polite"></p>
+        <div id="package-table-wrap" class="table-wrap" hidden>
+          <table class="package-table">
+            <thead><tr><th scope="col">Pacote</th><th scope="col">VersionItem</th><th scope="col">Qty</th></tr></thead>
+            <tbody id="package-body"></tbody>
+          </table>
+        </div>
+      </dialog>
 
       <footer>Dados da aba TIM 5G-Reuso <span id="data-date"></span></footer>
     </main>
