@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0c4a6e">
+    <meta name="description" content="Consulta de Delivery e NF por OC na aba TIM 5G-Reuso.">
+    <title>Consulta de Material</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <div class="mark" aria-hidden="true">M</div>
+        <div>
+          <p class="eyebrow">TIM 5G-Reuso</p>
+          <h1>Consulta de Material</h1>
+        </div>
+      </header>
+
+      <section class="panel" aria-labelledby="consulta-title">
+        <h2 id="consulta-title">Consultar OC</h2>
+        <form id="search-form" novalidate>
+          <label for="oc">Digite a OC</label>
+          <div class="search-row">
+            <input id="oc" name="oc" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="Ex.: 1340498" required>
+            <button type="submit">Buscar</button>
+          </div>
+        </form>
+        <p id="message" class="message" role="status" aria-live="polite">Informe uma OC para ver Delivery e NF.</p>
+      </section>
+
+      <section id="results" class="panel results" aria-labelledby="results-title" hidden>
+        <div class="results-heading">
+          <div>
+            <p class="eyebrow">Resultado da busca</p>
+            <h2 id="results-title">OC <span id="result-oc"></span></h2>
+          </div>
+          <span id="result-count" class="count"></span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Delivery</th><th scope="col">NF</th></tr></thead>
+            <tbody id="result-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer>Dados da aba TIM 5G-Reuso <span id="data-date"></span></footer>
+    </main>
+  </body>
+</html>
