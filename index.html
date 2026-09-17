@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0c4a6e">
-    <meta name="description" content="Consulta de Delivery e NF por OC na aba TIM 5G-Reuso.">
+    <meta name="description" content="Consulta de Delivery, NF e Code SAP por OC na aba TIM 5G-Reuso.">
     <title>Consulta de Material</title>
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
@@ -28,7 +28,7 @@
             <button type="submit">Buscar</button>
           </div>
         </form>
-        <p id="message" class="message" role="status" aria-live="polite">Informe uma OC para ver Delivery e NF.</p>
+        <p id="message" class="message" role="status" aria-live="polite">Informe uma OC para ver Delivery, NF e Code SAP.</p>
       </section>
 
       <section id="results" class="panel results" aria-labelledby="results-title" hidden>
@@ -41,7 +41,7 @@
         </div>
         <div class="table-wrap">
           <table>
-            <thead><tr><th scope="col">Delivery</th><th scope="col">NF</th></tr></thead>
+            <thead><tr><th scope="col">Delivery</th><th scope="col">NF</th><th scope="col">Code SAP</th></tr></thead>
             <tbody id="result-body"></tbody>
           </table>
         </div>

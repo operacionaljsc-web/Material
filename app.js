@@ -35,14 +35,14 @@ form.addEventListener('submit', async (event) => {
     if (!records) await loadData();
     const rows = records[oc] || [];
     if (!rows.length) {
-      showMessage(`Nenhum Delivery ou NF encontrado para a OC ${oc}.`);
+      showMessage(`Nenhum resultado encontrado para a OC ${oc}.`);
       return;
     }
     resultOc.textContent = oc;
     resultCount.textContent = `${rows.length} ${rows.length === 1 ? 'linha' : 'linhas'}`;
-    resultBody.replaceChildren(...rows.map(([delivery, nf]) => {
+    resultBody.replaceChildren(...rows.map(([delivery, nf, codeSap]) => {
       const tr = document.createElement('tr');
-      for (const value of [delivery, nf]) {
+      for (const value of [delivery, nf, codeSap]) {
         const td = document.createElement('td');
         td.textContent = value || '—';
         tr.append(td);

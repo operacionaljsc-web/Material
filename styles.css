@@ -22,7 +22,8 @@ button:focus-visible { outline: 3px solid #74c8eb; outline-offset: 3px; }
 .results-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
 .count { border-radius: 20px; padding: 7px 12px; background: #e6f3f8; color: #0b577b; font-size: 13px; font-weight: 700; white-space: nowrap; }
 .table-wrap { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; text-align: left; }
+table { width: 100%; border-collapse: collapse; text-align: center; }
+th, td { width: 33.333%; }
 th { padding: 13px 16px; background: #eaf2f6; color: #35566b; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
 th:first-child { border-radius: 8px 0 0 8px; }
 th:last-child { border-radius: 0 8px 8px 0; }
