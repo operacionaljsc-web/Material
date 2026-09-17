@@ -20,12 +20,12 @@ def extract(source):
     with open_workbook(str(source)) as workbook:
         with workbook.get_sheet("TIM 5G-Reuso") as sheet:
             for row in sheet.rows(sparse=True):
-                values = {cell.c: cell.v for cell in row if cell.c in (0, 38, 40)}
+                values = {cell.c: cell.v for cell in row if cell.c in (0, 23, 38, 40)}
                 oc = identifier(values.get(0))
                 if not oc or oc == "OC":
                     continue
-                pair = (identifier(values.get(38)), identifier(values.get(40)))
-                if pair == ("", "") or pair in seen.setdefault(oc, set()):
+                pair = (identifier(values.get(38)), identifier(values.get(40)), identifier(values.get(23)))
+                if pair[:2] == ("", "") or pair in seen.setdefault(oc, set()):
                     continue
                 seen[oc].add(pair)
                 records.setdefault(oc, []).append(pair)
