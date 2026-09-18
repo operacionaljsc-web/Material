@@ -3,6 +3,7 @@ const input = document.querySelector('#oc');
 const message = document.querySelector('#message');
 const results = document.querySelector('#results');
 const resultOc = document.querySelector('#result-oc');
+const resultSite = document.querySelector('#result-site');
 const resultCount = document.querySelector('#result-count');
 const resultBody = document.querySelector('#result-body');
 const dataDate = document.querySelector('#data-date');
@@ -13,6 +14,7 @@ const packageTableWrap = document.querySelector('#package-table-wrap');
 const packageBody = document.querySelector('#package-body');
 const closeDialog = document.querySelector('#close-dialog');
 let records = null;
+let sites = null;
 let packages = null;
 
 function showMessage(text, isError = false) {
@@ -25,6 +27,7 @@ async function loadData() {
   if (!response.ok) throw new Error('Não foi possível carregar os dados.');
   const data = await response.json();
   records = data.records;
+  sites = data.sites || {};
   dataDate.textContent = `· base de ${new Date(`${data.updatedAt}T12:00:00`).toLocaleDateString('pt-BR')}`;
 }
 
@@ -46,6 +49,7 @@ form.addEventListener('submit', async (event) => {
       return;
     }
     resultOc.textContent = oc;
+    resultSite.textContent = (sites[oc] || []).join(', ') || '—';
     resultCount.textContent = `${rows.length} ${rows.length === 1 ? 'linha' : 'linhas'}`;
     resultBody.replaceChildren(...rows.map(([delivery, nf, codeSap]) => {
       const tr = document.createElement('tr');
@@ -114,3 +118,4 @@ closeDialog.addEventListener('click', () => packageDialog.close());
 packageDialog.addEventListener('click', (event) => {
   if (event.target === packageDialog) packageDialog.close();
 });
+

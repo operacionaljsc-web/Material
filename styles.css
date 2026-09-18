@@ -20,6 +20,8 @@ button:focus-visible { outline: 3px solid #74c8eb; outline-offset: 3px; }
 .message { margin: 17px 0 0; color: #587184; }
 .message.error { color: #a32d38; }
 .results-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.result-identifiers { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 26px; }
+.result-site { margin: 0; font-size: 17px; font-weight: 700; }
 .count { border-radius: 20px; padding: 7px 12px; background: #e6f3f8; color: #0b577b; font-size: 13px; font-weight: 700; white-space: nowrap; }
 .table-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; text-align: center; }
@@ -42,3 +44,4 @@ dialog::backdrop { background: rgba(9, 32, 49, .55); }
 .package-table th:last-child, .package-table td:last-child { width: 15%; }
 footer { color: #6c8190; font-size: 13px; text-align: center; margin-top: 28px; }
 @media (max-width: 520px) { .page { padding: 27px 15px; } .header { margin-bottom: 24px; } .panel { padding: 20px; } .search-row { flex-direction: column; } button { width: 100%; } .results-heading { align-items: flex-start; flex-direction: column; } dialog { padding: 18px; } .package-table { min-width: 560px; } }
+
